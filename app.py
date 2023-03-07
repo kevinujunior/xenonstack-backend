@@ -18,6 +18,12 @@ app.config['JWT_SECRET_KEY'] = '38dd56f56d405e02ec0ba4be4adu89ab'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = DT.timedelta(days=1) 
 
 
+@app.route("/")
+def home():
+    return flask.jsonify("This is home of the server")
+   
+   
+
 @app.route("/signup", methods=["POST"])
 def signup():
     new_user = flask.request.json 
